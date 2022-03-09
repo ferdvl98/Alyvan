@@ -1,8 +1,9 @@
 <?php 
 
     require "../conexion/conexion.php";
-
+    //solo para ver si funciona git
     $id = $_POST["id"];
+
     $texto = $_POST["texto"];
     $a = $_POST["a"];
     //echo $texto;
