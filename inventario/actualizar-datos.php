@@ -2,6 +2,7 @@
 
     require "../conexion/conexion.php";
     //solo para ver si funciona git
+    //pues si funciona
     $id = $_POST["id"];
 
     $texto = $_POST["texto"];
