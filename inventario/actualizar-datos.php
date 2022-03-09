@@ -44,6 +44,34 @@
                 exit();
             } 
             break;
+        case 3:
+            /*$texto2 = explode(",",$texto);
+            $cont = count($texto2);
+            $texto = "";
+            for ($i=0; $i < $cont; $i++) { 
+                $texto = $texto."".$texto2[$i];
+            }*/
+            if($consulta = $link->query("UPDATE entrada SET obervaciones = '$texto' WHERE `id_entrada` = $id")){
+                echo "Dato actualizado";
+            }else{
+                echo "Error al actualizar los datos ";
+                exit();
+            } 
+            break;
+        case 4:
+            $texto2 = explode(",",$texto);
+            $cont = count($texto2);
+            $texto = "";
+            for ($i=0; $i < $cont; $i++) { 
+                $texto = $texto."".$texto2[$i];
+            }
+            if($consulta = $link->query("UPDATE entrada SET cajas_d = $texto WHERE `id_entrada` = $id")){
+                echo "Dato actualizado";
+            }else{
+                echo "Error al actualizar los datos ";
+                exit();
+            } 
+            break;
     }
 
 

@@ -11,7 +11,7 @@ while ($registro = mysqli_fetch_array($consulta)) {
 switch ($id2) {
     case 0:
         $consulta = $link->query("SELECT fecha_entrada as fecha, factura_rem, tarimas, cajas, piezas  FROM entsal WHERE id_producto = $id");
-        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 450px'>
+        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 600px'>
         <tr>
             <th>Fecha</th>
             <th>Factura</th>
@@ -26,20 +26,21 @@ switch ($id2) {
             <tr>
             <td>".$registro['fecha']."</td> 
             <td>".$registro['factura_rem']."</td> 
-            <td>".number_format($registro['tarimas'],2)."</td> 
-            <td>".number_format($registro['cajas'],2)."</td> 
+            <td>".number_format($registro['tarimas'],1)."</td> 
+            <td>".number_format($registro['cajas'],1)."</td> 
             <td>".number_format($registro['piezas'],0)."</td> 
             </tr>";
         }
         break;
     case 1;
-        $consulta = $link->query("SELECT fecha_entrada as fecha, factura_rem, tarimas, cajas, piezas, venta, obervaciones  FROM entrada WHERE id_producto = $id");
-        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 450px'>
+        $consulta = $link->query("SELECT id_entrada, fecha_entrada as fecha, factura_rem, tarimas, cajas, cajas_d, piezas, venta, obervaciones  FROM entrada WHERE id_producto = $id");
+        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 600px'>
         <tr>
             <th>Fecha</th>
             <th>Factura</th>
             <th>Tarimas</th>
             <th>Cajas</th>
+            <th>Dañadas</th>
             <th>Piezas</th>
             <th>Venta</th>
             <th>Observaciones</th>
@@ -56,17 +57,18 @@ switch ($id2) {
             <tr>
             <td>".$registro['fecha']."</td> 
             <td>".$registro['factura_rem']."</td> 
-            <td>".number_format($registro['tarimas'],2)."</td> 
-            <td>".number_format($registro['cajas'],2)."</td> 
+            <td>".number_format($registro['tarimas'],1)."</td> 
+            <td>".number_format($registro['cajas'],1)."</td> 
+            <td id ='cd' data-id_cd = '".$registro['id_entrada']."' contenteditable>".number_format($registro['cajas_d'],1)."</td> 
             <td>".number_format($registro['piezas'],0)."</td>
             <td>".$venta."</td> 
-            <td>".$registro['obervaciones']."</td>  
+            <td id ='des' data-id_des = '".$registro['id_entrada']."' contenteditable>".$registro['obervaciones']."</td>  
             </tr>";
         }
         break;
     case 2:
         $consulta = $link->query("SELECT fecha_salida as fecha, factura_rem, tarimas, cajas, piezas  FROM salida WHERE id_producto = $id");
-        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 450px'>
+        echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 600px'>
         <tr>
             <th>Fecha</th>
             <th>Factura</th>
@@ -81,8 +83,8 @@ switch ($id2) {
             <tr>
             <td>".$registro['fecha']."</td> 
             <td>".$registro['factura_rem']."</td> 
-            <td>".number_format($registro['tarimas'],2)."</td> 
-            <td>".number_format($registro['cajas'],2)."</td> 
+            <td>".number_format($registro['tarimas'],1)."</td> 
+            <td>".number_format($registro['cajas'],1)."</td> 
             <td>".number_format($registro['piezas'],0)."</td> 
             </tr>";
         }

@@ -146,6 +146,22 @@
           actualizar_datos(id, puesto, a);
         });
 
+        $(document).on("blur", "#des", function(){
+          var id = $(this).data("id_des");
+          var puesto = $(this).text();
+          //alert(puesto);
+          var a = 3;
+          actualizar_datos(id, puesto, a);
+        });
+
+        $(document).on("blur", "#cd", function(){
+          var id = $(this).data("id_cd");
+          var puesto = $(this).text();
+          //alert(puesto);
+          var a = 4;
+          actualizar_datos(id, puesto, a);
+        });
+
         $("#ES").change(function(){
           var id2 = document.getElementById('ES').value;
           obtener_datos2(a, id2);
@@ -216,15 +232,15 @@
   </fieldset>
 
   <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal fade" style ='width:1100px;' id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style ='width:1100px;'>
+    <div class="modal-content" style ='width:700px;'>
+      <div class="modal-header" >
         <h5 class="modal-title" id="exampleModalLabel">Entradas / Salidas</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       
-      <div class="modal-body">
+      <div class="modal-body" >
           <select id="ES" class="form-control" name="ES" >
             <option value="0" >Ambas</option>
             <option value="1" selected>Entradas</option>
