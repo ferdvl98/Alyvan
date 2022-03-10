@@ -30,8 +30,8 @@
         <td>".$registro['fecha_salida']."</td>
         <td>".$registro['cedis']."</td>
         <td>".$registro['destino']."</td>
-        <td>".number_format($registro['tarimas'],0)."</td>
-        <td>".number_format($registro['cajas'],0)."</td>
+        <td>".number_format($registro['tarimas'],2)."</td>
+        <td>".number_format($registro['cajas'],2)."</td>
         <td>".number_format($registro['piezas'],0)."</td>
         <td id ='pedido' data-id_pedido = '".$registro['id_producto']."'contenteditable>".$registro['or_pedido']."</td>
         <td id ='factura' data-id_factura = '".$registro['id_producto']."'contenteditable>".$registro['factura_rem']."</td>

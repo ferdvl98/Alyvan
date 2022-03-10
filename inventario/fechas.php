@@ -67,7 +67,8 @@ switch ($id2) {
         }
         break;
     case 2:
-        $consulta = $link->query("SELECT fecha_salida as fecha, factura_rem, tarimas, cajas, piezas  FROM salida WHERE id_producto = $id");
+        $consulta = $link->query("SELECT s.fecha_salida as fecha, s.factura_rem, s.tarimas, s.cajas, s.piezas, c.nom_cliente as cedis, d.nom_cliente as destino  FROM salida as s 
+        INNER JOIN cedis as c ON c.id_cliente = s.id_cedis INNER JOIN destinos as d ON d.id_cliente = s.id_destino WHERE id_producto = $id");
         echo "<table border = '1px' align ='center' id = 'tabla' class='display' style='width: 600px'>
         <tr>
             <th>Fecha</th>
@@ -75,6 +76,8 @@ switch ($id2) {
             <th>Tarimas</th>
             <th>Cajas</th>
             <th>Piezas</th>
+            <th>CEDIS</th>
+            <th>Destino</th>
         </tr>
         ";
         while ($registro = mysqli_fetch_array($consulta)) {
@@ -86,6 +89,8 @@ switch ($id2) {
             <td>".number_format($registro['tarimas'],1)."</td> 
             <td>".number_format($registro['cajas'],1)."</td> 
             <td>".number_format($registro['piezas'],0)."</td> 
+            <td>".$registro['cedis']."</td>
+            <td>".$registro['destino']."</td>
             </tr>";
         }
         break;
