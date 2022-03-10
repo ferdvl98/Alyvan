@@ -30,7 +30,7 @@
 <html lang="en">
 
 <head>
-    <title>Inventario Alivan</title>
+    <title>Inventario Alyvan</title>
     <link rel="shortcut icon" href="../img/logo-inventarios.png" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
