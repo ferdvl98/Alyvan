@@ -71,7 +71,7 @@
     <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p,0)."</td>
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
-    <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($piezas2,2)."</td>
+    <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($piezas2,3)."</td>
     <td id ='cajas2' data-id_cajas2 = '".$registro['id_producto']."'>".number_format($cajas2,2)."</td>
     <td id ='cajasd' data-id_cajasd = '".$registro['id_producto']."'>".number_format($cajasd,2)."</td>
     <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
