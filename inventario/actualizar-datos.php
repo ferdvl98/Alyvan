@@ -1,7 +1,7 @@
 <?php 
 
     require "../conexion/conexion.php";
-    //solo para ver si funciona git
+    //solo para ver si funciona git desde la maquina HP
     //pues si funciona
     $id = $_POST["id"];
 
