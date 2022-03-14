@@ -52,8 +52,7 @@
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
                     p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`precio` DESC");
                     break;
-            }
-            
+            }  
         }
     }else{
         if($clie>0){
@@ -113,7 +112,6 @@
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%' ORDER BY  p.`precio` DESC;");
                     break;
             }
-           
         }
     }
     echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
