@@ -14,7 +14,7 @@
             <script>
                 alert("¡Debe llenar todos los campos!")
                 window.location = "index.php";
-            </script>
+            </script> 
         <?php
     }else{
         if ($result->num_rows > 0) {
