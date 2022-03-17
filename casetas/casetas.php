@@ -71,8 +71,8 @@
           //alert("hola");
         });
       
-        $(document).on("blur", "#carretera", function(){
-          var id = $(this).data("id_carretera");
+        $(document).on("blur", "#carretera2", function(){
+          var id = $(this).data("id_carretera2");
           var puesto = $(this).text();
           var a = 2;
           actualizar_datos(id, puesto, a);
@@ -85,6 +85,24 @@
           actualizar_datos(id, puesto, a);
           //alert("peaje");
         });
+
+
+        $(document).on("click", "#acciones", function(){
+            if(confirm("¿Esta seguro que quiere eliminar el producto?")){
+            var id =$(this).data("id");
+            //alert(id);
+            $.ajax({
+              url: "eliminar.php",
+              method: "POST",
+              data: {id:id},
+              success: function(data){
+                obtener_datos();
+                alert(data);
+              }
+            })
+
+          };
+        })
 
     //)};
   });

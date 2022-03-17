@@ -19,7 +19,7 @@
             <tr>
             <td id ='caseta' data-id_caseta = '".$registro['id']."'contenteditable>".$registro['nombre']."</td>
             <td id ='estado' data-id_estado = '".$registro['id']."'>".$registro['estado']."</td>
-            <td id ='carretera' data-id_carretera = '".$registro['id']."'contenteditable>".$registro['carretera']."</td>
+            <td id ='carretera2' data-id_carretera2 = '".$registro['id']."'contenteditable>".$registro['carretera']."</td>
             <td id ='peaje' data-id_peaje = '".$registro['id']."'contenteditable>".number_format($registro['peaje'],2)."</td>
             <td><button id ='acciones' data-id= '".$registro['id']."' class='fas fa-trash' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
             </tr>";

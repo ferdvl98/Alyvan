@@ -90,7 +90,7 @@
 
     </main>
     <script src="../js/script.js"></script>
-    <script src="../js/botones.js"></script>
+    <script src="../js/botones2.js"></script>
     <script src="../js/fontawesome.js"></script>
     <script src="../js/fontawesome.min.js"></script>
 </body>
