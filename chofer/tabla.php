@@ -14,16 +14,18 @@
             <th>Municipio</th>
             <th>Dirección</th>
             <th>Telefóno</th>
+            <th>Eliminar</th>
         </tr>";
     
         while ($registro = mysqli_fetch_array($consulta)) {
             echo "
             <tr>
-            <td id ='nombre' data-id_nombre = '".$registro['id_chofer']."'contenteditable>".$registro['nombre']."</td>
-            <td id ='rfc' data-id_rfc = '".$registro['id_chofer']."'contenteditable>".$registro['rfc']."</td>
-            <td id ='estado' data-id_estado = '".$registro['id_chofer']."'>".$registro['estado']."</td>
-            <td id ='municipio' data-id_municipio = '".$registro['id_chofer']."'>".$registro['municipio']."</td>
-            <td id ='dirección' data-id_dirección = '".$registro['id_chofer']."'contenteditable>".$registro['direccion']."</td>
-            <td id ='telefóno' data-id_telefóno = '".$registro['id_chofer']."'contenteditable>".$registro['ntel']."</td>
+            <td id ='nombre2' data-id_nombre2 = '".$registro['id_chofer']."'contenteditable>".$registro['nombre']."</td>
+            <td id ='rfc2' data-id_rfc2 = '".$registro['id_chofer']."'contenteditable>".$registro['rfc']."</td>
+            <td id ='estado2' data-id_estado2 = '".$registro['id_chofer']."'>".$registro['estado']."</td>
+            <td id ='municipio2' data-id_municipio2 = '".$registro['id_chofer']."'>".$registro['municipio']."</td>
+            <td id ='dirección2' data-id_dirección2 = '".$registro['id_chofer']."'contenteditable>".$registro['direccion']."</td>
+            <td id ='telefóno2' data-id_telefóno2 = '".$registro['id_chofer']."'contenteditable>".$registro['ntel']."</td>
+            <td><button id ='acciones' data-id= '".$registro['id_chofer']."' class='fas fa-trash' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
             </tr>";
         }

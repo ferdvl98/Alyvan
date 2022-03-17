@@ -4,10 +4,10 @@
 
     $id = $_POST["id"];
     
-    $sql = "DELETE FROM caseta WHERE id=$id";
+    $sql = "DELETE FROM chofer WHERE id_chofer=$id";
 
     if ($link->query($sql) === TRUE) {
-        echo "¡Caseta eliminado con exito!";
+        echo "¡Chofer eliminado con exito!";
     } else {
     echo "¡Error al eliminar el producto: " . $conn->error."!";
     }

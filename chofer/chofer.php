@@ -107,30 +107,30 @@
             }
 
 
-            $(document).on("blur", "#nombre", function(){
-                var id = $(this).data("id_nombre");
+            $(document).on("blur", "#nombre2", function(){
+                var id = $(this).data("id_nombre2");
                 var puesto = $(this).text();
                 var a = 1;
                 actualizar_datos(id, puesto, a);
                 //alert("hola");
             });
 
-            $(document).on("blur", "#rfc", function(){
-                var id = $(this).data("id_rfc");
+            $(document).on("blur", "#rfc2", function(){
+                var id = $(this).data("id_rfc2");
                 var puesto = $(this).text();
                 var a = 2;
                 actualizar_datos(id, puesto, a);
                 //alert("hola");
             });
-            $(document).on("blur", "#dirección", function(){
-                var id = $(this).data("id_dirección");
+            $(document).on("blur", "#direccion2", function(){
+                var id = $(this).data("id_direccion2");
                 var puesto = $(this).text();
                 var a = 3;
                 actualizar_datos(id, puesto, a);
                 //alert("hola");
             });
-            $(document).on("blur", "#telefóno", function(){
-                var id = $(this).data("id_telefóno");
+            $(document).on("blur", "#telefono2", function(){
+                var id = $(this).data("id_telefono2");
                 var puesto = $(this).text();
                 var a = 4;
                 actualizar_datos(id, puesto, a);
@@ -150,6 +150,23 @@
                 actualizar_datos(id, puesto, a);
                 //alert("hola");
             });
+
+            $(document).on("click", "#acciones", function(){
+            if(confirm("¿Esta seguro que quiere eliminar el producto?")){
+            var id =$(this).data("id");
+            //alert(id);
+            $.ajax({
+              url: "eliminar.php",
+              method: "POST",
+              data: {id:id},
+              success: function(data){
+                obtener_datos();
+                alert(data);
+              }
+            })
+
+          };
+        })
             
             
             

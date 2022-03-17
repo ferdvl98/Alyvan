@@ -78,8 +78,8 @@
           actualizar_datos(id, puesto, a);
           //alert("carretera");
         });
-        $(document).on("blur", "#peaje", function(){
-          var id = $(this).data("id_peaje");
+        $(document).on("blur", "#peaje2", function(){
+          var id = $(this).data("id_peaje2");
           var puesto = $(this).text();
           var a = 3;
           actualizar_datos(id, puesto, a);
