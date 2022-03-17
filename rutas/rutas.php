@@ -130,7 +130,24 @@
           <option value="0" selected>Seleccionar</option>
         </select>
       </div>
+      <div class="form-group col-md-5">
+        <label for="inputState">Casetas</label>
+        <input list="browsers" id="cliente" class="form-control" placeholder="Nombre de la Caseta" name="cedis">
+        <datalist id="browsers">
+          <?php
+          $query = $link->query("SELECT * FROM `caseta`");
+          while ($valores = mysqli_fetch_array($query)) {
+            echo '<option >' . $valores['nombre'];
+          }
+          ?>
+        </datalist>
+      </div>
 
+      <div class="form-group col-md-2">
+                <br>
+                <button type="submit" id="enviar" class="btn btn-primary" style ="height: 40px; width: 100PX; margin-top:5px;">Registar</button>
+               
+            </div>
     </div>
   </form>
   
