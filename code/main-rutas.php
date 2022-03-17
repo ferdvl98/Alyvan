@@ -53,26 +53,26 @@
             <p><i class="fas fa-user"></i>&nbsp;<?php echo $usuario;?></p>
         </div>
         <div class="options__menu">
-            <a href="../rutas/rutas.php?id=<?php echo $id; ?>" target="workarea" id="inv" class="selected">
-                <div class="option" id="btn_inventario">
+            <a href="../rutas/rutas.php?id=<?php echo $id; ?>" target="workarea" id="ru" class="selected">
+                <div class="option" id="btn_rutas">
                 <i class="fas fa-road" title="Rutas"></i>
                     <h4>Rutas</h4>
                 </div>
             </a>
-            <a href="../casetas/casetas.php?id=<?php echo $id; ?>" target="workarea" id="ent">
-                <div class="option" id="btn_entradas">
+            <a href="../casetas/casetas.php?id=<?php echo $id; ?>" target="workarea" id="cas">
+                <div class="option" id="btn_casetas">
                 <i class="fas fa-flag-checkered"></i>
                     <h4>Casetas</h4>
                 </div>
             </a>
-            <a href="../chofer/chofer.php?id=<?php echo $id; ?>" target="workarea" id="sal">
-                <div class="option" id="btn_salidas">
+            <a href="../chofer/chofer.php?id=<?php echo $id; ?>" target="workarea" id="cho">
+                <div class="option" id="btn_chofer">
                 <i class="fas fa-truck" title="Chofer"></i>
                     <h4>Chofer</h4>
                 </div>
             </a>
-            <a href="../clientes/clientes.php?id=<?php echo $id; ?>" target="workarea" id="clien">
-                <div class="option" id="btn_clientes">
+            <a href="../clientes/clientes.php?id=<?php echo $id; ?>" target="workarea" id="des">
+                <div class="option" id="btn_descargas">
                     <i class="fas fa-file-download" title="Descargar"></i>
                     <h4>Descargar</h4>
                 </div>

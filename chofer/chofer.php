@@ -93,6 +93,18 @@
                 }
                 });
             });
+            function actualizar_datos(id, texto, a){
+                //alert("hola");
+                $.ajax({
+                    url: "actualizar-datos.php",
+                    method: "POST",
+                    data: {id: id, texto:texto, a:a},
+                    success: function(data){
+                        obtener_datos();
+                        alert(data);
+                    }
+                })
+            }
 
 
             $(document).on("blur", "#nombre", function(){
@@ -100,8 +112,47 @@
                 var puesto = $(this).text();
                 var a = 1;
                 actualizar_datos(id, puesto, a);
-                alert("hola");
+                //alert("hola");
             });
+
+            $(document).on("blur", "#rfc", function(){
+                var id = $(this).data("id_rfc");
+                var puesto = $(this).text();
+                var a = 2;
+                actualizar_datos(id, puesto, a);
+                //alert("hola");
+            });
+            $(document).on("blur", "#dirección", function(){
+                var id = $(this).data("id_dirección");
+                var puesto = $(this).text();
+                var a = 3;
+                actualizar_datos(id, puesto, a);
+                //alert("hola");
+            });
+            $(document).on("blur", "#telefóno", function(){
+                var id = $(this).data("id_telefóno");
+                var puesto = $(this).text();
+                var a = 4;
+                actualizar_datos(id, puesto, a);
+                //alert("hola");
+            });
+            $(document).on("blur", "#placas", function(){
+                var id = $(this).data("id_placas");
+                var puesto = $(this).text();
+                var a = 5;
+                actualizar_datos(id, puesto, a);
+                //alert("hola");
+            });
+            $(document).on("blur", "#rendimiento", function(){
+                var id = $(this).data("id_rendimiento");
+                var puesto = $(this).text();
+                var a = 6;
+                actualizar_datos(id, puesto, a);
+                //alert("hola");
+            });
+            
+            
+            
         });
     </script>
 <head>

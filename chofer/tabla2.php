@@ -13,7 +13,7 @@
         while ($registro = mysqli_fetch_array($consulta)) {
             echo "
             <tr>
-            <td id ='lote' data-id_lote = '".$registro['id_placas']."'contenteditable>".$registro['placas']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_placas']."'contenteditable>".number_format($registro['rendimiento'],2)."</td>
+            <td id ='placas' data-id_placas = '".$registro['id_placas']."'contenteditable>".$registro['placas']."</td>
+            <td id ='rendimiento' data-id_rendimiento = '".$registro['id_placas']."'contenteditable>".number_format($registro['rendimiento'],2)."</td>
             </tr>";
         }
