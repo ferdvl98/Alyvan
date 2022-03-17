@@ -93,6 +93,15 @@
                 }
                 });
             });
+
+
+            $(document).on("blur", "#nombre", function(){
+                var id = $(this).data("id_nombre");
+                var puesto = $(this).text();
+                var a = 1;
+                actualizar_datos(id, puesto, a);
+                alert("hola");
+            });
         });
     </script>
 <head>

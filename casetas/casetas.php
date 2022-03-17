@@ -50,8 +50,8 @@
         });
 
         function actualizar_datos(id, texto, a){
-          alert("hola");
-          /*$.ajax({
+          //alert("hola");
+          $.ajax({
             url: "actualizar-datos.php",
             method: "POST",
             data: {id: id, texto:texto, a:a},
@@ -59,14 +59,14 @@
               obtener_datos();
               alert(data);
             }
-          })*/
+          })
         }
         
 
-        /*$(document).on("blur", "#caseta", function(){
+        $(document).on("blur", "#caseta", function(){
           var id = $(this).data("id_caseta");
           var puesto = $(this).text();
-          var a = 0;
+          var a = 1;
           actualizar_datos(id, puesto, a);
           //alert("hola");
         });
@@ -74,20 +74,20 @@
         $(document).on("blur", "#carretera", function(){
           var id = $(this).data("id_carretera");
           var puesto = $(this).text();
-          var a = 0;
+          var a = 2;
           actualizar_datos(id, puesto, a);
           //alert("carretera");
         });
         $(document).on("blur", "#peaje", function(){
           var id = $(this).data("id_peaje");
           var puesto = $(this).text();
-          var a = 0;
+          var a = 3;
           actualizar_datos(id, puesto, a);
           //alert("peaje");
-        });*/
+        });
 
-    )};
-
+    //)};
+  });
     </script>
 </head>
 <body>

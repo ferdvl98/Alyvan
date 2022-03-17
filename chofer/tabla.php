@@ -19,11 +19,11 @@
         while ($registro = mysqli_fetch_array($consulta)) {
             echo "
             <tr>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'contenteditable>".$registro['nombre']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'contenteditable>".$registro['rfc']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'>".$registro['estado']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'>".$registro['municipio']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'contenteditable>".$registro['direccion']."</td>
-            <td id ='lote' data-id_lote = '".$registro['id_chofer']."'contenteditable>".$registro['ntel']."</td>
+            <td id ='nombre' data-id_nombre = '".$registro['id_chofer']."'contenteditable>".$registro['nombre']."</td>
+            <td id ='rfc' data-id_rfc = '".$registro['id_chofer']."'contenteditable>".$registro['rfc']."</td>
+            <td id ='estado' data-id_estado = '".$registro['id_chofer']."'>".$registro['estado']."</td>
+            <td id ='municipio' data-id_municipio = '".$registro['id_chofer']."'>".$registro['municipio']."</td>
+            <td id ='dirección' data-id_dirección = '".$registro['id_chofer']."'contenteditable>".$registro['direccion']."</td>
+            <td id ='telefóno' data-id_telefóno = '".$registro['id_chofer']."'contenteditable>".$registro['ntel']."</td>
             </tr>";
         }
