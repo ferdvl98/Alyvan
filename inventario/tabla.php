@@ -1,11 +1,23 @@
 <?php
     
     require_once "../conexion/conexion.php";
+    $id = $_GET['id'];
+    switch ($id) {
+        case 0:
+            //Inventario
+            $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
+            p.`precio` , p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente;");
+
+            break; 
+        case 1:
+            //cuarentena
+            $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`, p.`lote`, p.`cajas`, p.`piezas`, p.`fecha_cad`, c.`nom_cliente`, 
+            p.`precio`, p.lugar FROM `producto` AS p INNER JOIN cliente AS c ON c.id_cliente = p.id_cliente INNER JOIN entrada as e ON e.id_producto = p.id_producto WHERE e.cajas_d > 0;");
+            break;
+        }
 
     //$consulta = $link->("SELECT ");
-    $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                             p.`precio` , p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente;");
-
+   
     echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
         <tr>
             <th style='font-size:90%;'>Código de Barras</th>

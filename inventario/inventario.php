@@ -21,6 +21,14 @@
     <script src="../js/jquery-3.5.1.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
+        var id = document.getElementById('selec').value;
+        $("#selec").change(function(){
+            var id = document.getElementById('selec').value;
+            //alert(id);
+            obtener_datos(id);
+
+	      });
+
         var cli = document.getElementById('clientes').value;
         function totalv(a) {
           $.ajax({
@@ -32,10 +40,10 @@
             }
           });
         }
-        //Ver registros en la Tabla
-        function obtener_datos(){
+        //Ver registros en la T4idabla
+        function obtener_datos(id){
           $.ajax({
-            url: "tabla.php",
+            url: "tabla.php?id="+id,
             method: "POST",
             success: function(data){
               $("#result").html(data)
@@ -45,7 +53,7 @@
         }
         
       
-        obtener_datos();
+        obtener_datos(id);
         function obtener_datos2(id, id2){
           $.ajax({
             url: "fechas.php",
