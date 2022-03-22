@@ -97,11 +97,12 @@
             totalv(cli);
 	      });
         $("#order").change(function(){
+          var id5 = document.getElementById('selec').value;//extraer el valor del select
           var cli = document.getElementById('clientes').value;
           var ord = document.getElementById('order').value;
           var id = $("#buscar").val();
           $.ajax({
-              url: "buscar.php",
+              url: "buscar.php?id="+id5,
               method: "POST",
               data: {id:id, cli:cli, ord:ord},
               success: function(data){
@@ -119,12 +120,13 @@
 
         function actualizar_datos(id, texto, a){
           //var id2 = document.getElementById('selec').value;
+          var id5 = document.getElementById('selec').value;
           $.ajax({
             url: "actualizar-datos.php",
             method: "POST",
             data: {id: id, texto:texto, a:a},
             success: function(data){
-              obtener_datos();
+              obtener_datos(id5);
               alert(data);
             }
           });
@@ -186,13 +188,14 @@
       $(document).on("click", "#delete", function(){
             if(confirm("¿Esta seguro que quiere eliminar el producto?")){
             var id =$(this).data("id");
+            var id5 = document.getElementById('selec').value;
             //alert(id);
             $.ajax({
               url: "eliminar.php",
               method: "POST",
               data: {id:id},
               success: function(data){
-                obtener_datos();
+                obtener_datos(id5);
                 alert(data);
               }
             })
