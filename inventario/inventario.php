@@ -70,6 +70,7 @@
         log.addEventListener('input', buscar);
         
         function buscar(e) {
+          //alert(e);
           var cli = document.getElementById('clientes').value;
           var ord = document.getElementById('order').value;
           var id5 = document.getElementById('selec').value;//extraer el valor del select
@@ -284,5 +285,32 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Cajas-->
+<div class="modal fade" style ='width:1100px;' id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style ='width:1100px;'>
+    <div class="modal-content" style ='width:700px;'>
+      <div class="modal-header" >
+        <h5 class="modal-title" id="exampleModalLabel">Recuperación</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body" >
+          
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam perferendis deleniti, quaerat doloremque, harum ducimus possimus accusantium dicta quod labore, veritatis iure ea recusandae porro nobis fugit corporis qui minus!</p>
+        
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 </body>
 </html>
