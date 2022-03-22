@@ -72,11 +72,12 @@
         function buscar(e) {
           var cli = document.getElementById('clientes').value;
           var ord = document.getElementById('order').value;
+          var id5 = document.getElementById('selec').value;//extraer el valor del select
           var id = $("#buscar").val();
           $.ajax({
               url: "buscar.php",
               method: "POST",
-              data: {id:id, cli:cli, ord:ord},
+              data: {id:id, cli:cli, ord:ord, id5:id5},
               success: function(data){
                 $("#result").html(data)
               }
@@ -85,11 +86,12 @@
         $("#clientes").change(function(){
           var cli = document.getElementById('clientes').value;
           var ord = document.getElementById('order').value;
+          var id5 = document.getElementById('selec').value;//extraer el valor del select
           var id = $("#buscar").val();
           $.ajax({
               url: "buscar.php",
               method: "POST",
-              data: {id:id, cli:cli, ord:ord},
+              data: {id:id, cli:cli, ord:ord, id5:id5},
               success: function(data){
                 $("#result").html(data)
               }
