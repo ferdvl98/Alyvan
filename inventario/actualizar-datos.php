@@ -72,6 +72,15 @@
                 exit();
             } 
             break;
+
+        case 5:
+            if($consulta = $link->query("UPDATE producto SET lugar = '$texto' WHERE id_producto = $id")){
+                echo "Dato actualizado";
+            }else{
+                echo "Error al actualizar los datos ";
+                exit();
+            }
+            break;
     }
 
 

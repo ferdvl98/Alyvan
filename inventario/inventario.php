@@ -162,6 +162,14 @@
           actualizar_datos(id, puesto, a);
         });
 
+        $(document).on("blur", "#lugar", function(){
+          var id = $(this).data("id_lugar");
+          var puesto = $(this).text();
+          //alert(puesto);
+          var a = 5;
+          actualizar_datos(id, puesto, a);
+        });
+
         $("#ES").change(function(){
           var id2 = document.getElementById('ES').value;
           obtener_datos2(a, id2);
@@ -188,7 +196,12 @@
     </script>
 </head>
 <body>
-  <legend>Inventario</legend><br>
+  
+  <select class="form-select" aria-label=".form-select-sm example" id="selec">
+  <option value ="0" selected>Inventario</option>
+  <option value="1">Cuarentena</option>
+  
+</select><br>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Buscar en Inventario</label>

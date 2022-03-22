@@ -181,7 +181,7 @@ echo "
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
     <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($piezas2,3)."</td>
     <td id ='cajas2' data-id_cajas2 = '".$registro['id_producto']."'>".number_format($cajas2,2)."</td>
-    <td id ='cajasd' data-id_cajasd = '".$registro['id_producto']."'>".$registro['lugar']."</td>
+    <td id ='lugar' data-id_lugar = '".$registro['id_producto']."'contenteditable>".$registro['lugar']."</td>
     <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
     <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
     <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>

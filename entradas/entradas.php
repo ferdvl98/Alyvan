@@ -46,8 +46,8 @@ require_once "../conexion/conexion.php";
         x.disabled = z;
         x = document.getElementById('crpt');
         x.disabled = z;
-        x = document.getElementById('pos');
-        x.disabled = z;
+        /*x = document.getElementById('pos');
+        x.disabled = z;*/
       }
 
       const input = document.querySelector('input');
@@ -72,7 +72,7 @@ require_once "../conexion/conexion.php";
               $('#pre').val("");
               $('#crpt').val("");
               $('#cli').val("");
-              $('#pos').val("");
+              //$('#pos').val("");
             } else {
               var a = data.split("*");
               $('#des').val(a[0]);
@@ -81,7 +81,7 @@ require_once "../conexion/conexion.php";
               $('#pre').val(a[2]);
               $('#crpt').val(a[3]);
               $('#cli').val(a[5]);
-              $('#pos').val(a[4]);
+              //$('#pos').val(a[4]);
               bloquear(true);
             }
           }
