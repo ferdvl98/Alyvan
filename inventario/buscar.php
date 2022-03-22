@@ -1,12 +1,12 @@
 <?php
 
     require_once "../conexion/conexion.php";
-    $id = $_GET['id'];
+    $id5 = $_POST["id5"];
     $nombre = $_POST["id"];
     $clie = $_POST["cli"];
     $oder = $_POST["ord"];
    //echo $clie."-".$oder;
-    switch($id){
+    switch($id5){
         case 0:
             if(empty(trim($nombre))){
                 if($clie>0){

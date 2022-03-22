@@ -102,9 +102,9 @@
           var ord = document.getElementById('order').value;
           var id = $("#buscar").val();
           $.ajax({
-              url: "buscar.php?id="+id5,
+              url: "buscar.php",
               method: "POST",
-              data: {id:id, cli:cli, ord:ord},
+              data: {id:id, cli:cli, ord:ord, id5:id5},
               success: function(data){
                 $("#result").html(data)
               }
