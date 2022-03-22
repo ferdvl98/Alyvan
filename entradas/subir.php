@@ -48,6 +48,8 @@ if (!empty($uploadfile)) {
         $caducidad = $año2 . "-" . $mes2 . "-" . $dia2;
         $cliente = $objExcel->getActiveSheet()->getCell('Q' . ($num))->getCalculatedValue();
         $venta = $objExcel->getActiveSheet()->getCell('R' . ($num))->getCalculatedValue();
+        $pos = $objExcel->getActiveSheet()->getCell('S' . ($num))->getCalculatedValue();
+        
         if (
             empty($cbarras) || empty($año) || empty($mes) || empty($dia) || empty($descripcion) || empty($lote) || empty($factura) || empty($tarimas) ||
             empty($cajas)  || empty($piezas) || empty($precio) || empty($cliente) || empty($venta) || empty($cajas_rpt)
@@ -120,8 +122,8 @@ if (!empty($uploadfile)) {
                     }
 
 
-                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, venta)
-                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, $venta)";
+                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, venta, lugar)
+                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, $venta, $pos)";
                     if ($link->query($sql) === TRUE) {
                         $id = mysqli_insert_id($link);
                         $sql = "INSERT INTO entrada (id_producto, factura_rem, tarimas, cajas, piezas,cajas_d, fecha_entrada,  id_user)
@@ -165,8 +167,8 @@ if (!empty($uploadfile)) {
                             $cliente = $row["id_cliente"];
                         }
 
-                        $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, venta)
-                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, $venta)";
+                        $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, venta, lugar)
+                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, $venta, $pos)";
                         if ($link->query($sql) === TRUE) {
                             $id = mysqli_insert_id($link);
                             $sql = "INSERT INTO entrada (id_producto, factura_rem, tarimas, cajas, piezas,cajas_d, fecha_entrada,  id_user)

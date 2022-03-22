@@ -46,6 +46,8 @@ require_once "../conexion/conexion.php";
         x.disabled = z;
         x = document.getElementById('crpt');
         x.disabled = z;
+        x = document.getElementById('pos');
+        x.disabled = z;
       }
 
       const input = document.querySelector('input');
@@ -70,6 +72,7 @@ require_once "../conexion/conexion.php";
               $('#pre').val("");
               $('#crpt').val("");
               $('#cli').val("");
+              $('#pos').val("");
             } else {
               var a = data.split("*");
               $('#des').val(a[0]);
@@ -77,7 +80,8 @@ require_once "../conexion/conexion.php";
               $('#cad').val(a[1]);
               $('#pre').val(a[2]);
               $('#crpt').val(a[3]);
-              $('#cli').val(a[4]);
+              $('#cli').val(a[5]);
+              $('#pos').val(a[4]);
               bloquear(true);
             }
           }
@@ -143,11 +147,11 @@ require_once "../conexion/conexion.php";
         <label for="inputZip">Precio (Unidad)</label>
         <input type="number" class="form-control" id="pre" placeholder="Precio" name="precio">
       </div>
-      <div class="form-group col-md-3">
-        <label for="inputEmail4">Fecha de Caducidad (Si aplica)</label>
+      <div class="form-group col-md-2">
+        <label for="inputEmail4">Fecha de Caducidad*</label>
         <input type="date" class="form-control" id="cad" placeholder="Fecha de Caducidad" name="caducidad">
       </div>
-      <div class="form-group col-md-3">
+      <div class="form-group col-md-2">
         <label for="inputEmail4">Cliente</label>
         <input list="browsers" name="cliente" id="cli" placeholder="Nombre del Cliente" class="form-control" name="cliente">
         <datalist id="browsers">
@@ -159,9 +163,14 @@ require_once "../conexion/conexion.php";
           ?>
         </datalist>
       </div>
-      <div class="form-group col-md-4">
-        <label for="inputZip">Obervaciones</label>
+      <div class="form-group col-md-3">
+        <label for="inputZip">Obervaciones*</label>
         <input type="text" class="form-control" id="ob" placeholder="Observaciones" name="ob">
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="inputZip">Posición*</label>
+        <input type="text" class="form-control" id="pos" placeholder="Posición" name="pos">
       </div>
 
     </div>

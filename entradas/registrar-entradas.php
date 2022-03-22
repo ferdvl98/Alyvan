@@ -8,6 +8,12 @@
     $cbarras = $_POST["cbarras"];
     
 
+    if (isset($_POST["pos"])){
+        $pos = $_POST["pos"];
+    }else{
+        $pos = "";
+    }
+
     if (isset($_POST["lote"])){
         $lote = $_POST["lote"];
     }else{
@@ -139,8 +145,8 @@
                 }
     
 
-                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio)
-                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio)";
+                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, lugar)
+                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, '$pos')";
                         if ($link->query($sql) === TRUE) {
                             $id = mysqli_insert_id($link);
                             $sql = "INSERT INTO entrada (id_producto, factura_rem, tarimas, cajas, piezas,cajas_d, fecha_entrada,  id_user, venta, obervaciones)
@@ -185,8 +191,8 @@
                         $cliente = $row["id_cliente"];
                     }
 
-                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio)
-                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio)";
+                    $sql = "INSERT INTO producto (cod_barras,lote, descripcion,tarimas, cajas, piezas, fecha_cad, id_cliente, precio, lugar)
+                    VALUES ('$cbarras', '$lote', '$descripcion',$tarimas,  $cajas_rpt,$piezas ,'$caducidad', $cliente, $precio, '$pos')";
                         if ($link->query($sql) === TRUE) {
                             $id = mysqli_insert_id($link);
                             $sql = "INSERT INTO entrada (id_producto, factura_rem, tarimas, cajas, piezas,cajas_d, fecha_entrada,  id_user, venta, obervaciones)

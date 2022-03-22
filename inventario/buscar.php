@@ -11,46 +11,46 @@
             switch ($oder) {
                 case 0:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`, p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio` FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie");
+                    p.`precio`, p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,   p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`descripcion` ASC");
+                    p.`precio`, p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`descripcion` ASC");
                     break;
                 case 2:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio` FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`descripcion` DESC");
+                    p.`precio`, p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`descripcion` DESC");
                     break;
                 case 3:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`precio` ASC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`precio` ASC");
                     break;
                 case 4:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`precio` DESC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente WHERE p.id_cliente = $clie ORDER BY  p.`precio` DESC");
                     break;
             } 
         }else{
             switch ($oder) {
                 case 0:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente;");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente;");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`descripcion` ASC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`descripcion` ASC");
                     break;
                 case 2:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`descripcion` DESC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`descripcion` DESC");
                     break;
                 case 3:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`precio` ASC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`precio` ASC");
                     break;
                 case 4:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`precio` DESC");
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ORDER BY  p.`precio` DESC");
                     break;
             }  
         }
@@ -59,27 +59,27 @@
             switch ($oder) {
                 case 0:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.id_cliente = $clie AND (p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%');");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.id_cliente = $clie AND (p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%') ORDER BY  p.`descripcion` ASC;");
                     break;
                 case 2:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.id_cliente = $clie AND (p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%') ORDER BY  p.`descripcion` DESC;");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.id_cliente = $clie AND (p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%') ORDER BY  p.`precio` ASC;");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.id_cliente = $clie AND (p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%') ORDER BY  p.`precio` DESC;");
                     break;
             }
@@ -88,27 +88,27 @@
             switch ($oder) {
                 case 0:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%';");
                     break;
                 case 1:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%' ORDER BY  p.`descripcion` ASC;");
                     break;
                 case 2:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%' ORDER BY  p.`descripcion` DESC;");
                     break;
                 case 3:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%' ORDER BY  p.`precio` ASC;");
                     break;
                 case 4:
                     $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                    p.`precio`  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
+                    p.`precio`, p.lugar  FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente
                     WHERE p.`cod_barras` LIKE '%$nombre%' OR p.`descripcion` LIKE '%$nombre%' OR c.`nom_cliente` LIKE '%$nombre%' ORDER BY  p.`precio` DESC;");
                     break;
             }
@@ -120,11 +120,11 @@
         <th>Descripción</th>
         <th>Lote</th>
         <th style='font-size:90%;'>Cajas por Tarima</th>
+        
         <th>Piezas</th>
-        <th style='font-size:90%;'>Piezas Disponibles</th>
         <th>Cajas</th>
         <th>Tarimas</th>
-        <th style='font-size:90%;'>Cajas Dañadas</th>
+        <th>Posición</th>
         <th>Cliente</th>
         <th style='font-size:90%;'>Precio Unitario</th>
         <th>ACCIONES</th>
@@ -177,11 +177,11 @@ echo "
 <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
 <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
     <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
-    <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p,0)."</td>
+    
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
     <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($piezas2,3)."</td>
     <td id ='cajas2' data-id_cajas2 = '".$registro['id_producto']."'>".number_format($cajas2,2)."</td>
-    <td id ='cajasd' data-id_cajasd = '".$registro['id_producto']."'>".number_format($cajasd,2)."</td>
+    <td id ='cajasd' data-id_cajasd = '".$registro['id_producto']."'>".$registro['lugar']."</td>
     <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
     <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
     <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
