@@ -30,11 +30,12 @@
 	      });
 
         var cli = document.getElementById('clientes').value;
-        function totalv(a) {
+        function totalv(a, id) {
+          //var id = document.getElementById('selec').value;
           $.ajax({
             url: "total.php",
             method: "POST",
-            data: {a:a},
+            data: {a:a, id:id},
             success: function(data) {
               $("#result1").html(data)
             }
@@ -49,7 +50,7 @@
               $("#result").html(data)
             }
           })
-          totalv(cli);
+          totalv(cli, id);
         }
         
       
@@ -85,6 +86,7 @@
             })
         }
         $("#clientes").change(function(){
+          
           var cli = document.getElementById('clientes').value;
           var ord = document.getElementById('order').value;
           var id5 = document.getElementById('selec').value;//extraer el valor del select
@@ -97,7 +99,7 @@
                 $("#result").html(data)
               }
             })
-            totalv(cli);
+            totalv(cli, id5);
 	      });
         $("#order").change(function(){
           var id5 = document.getElementById('selec').value;//extraer el valor del select
