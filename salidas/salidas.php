@@ -135,27 +135,26 @@ require_once "../conexion/conexion.php";
       </div>
       <div class="form-group col-md-5">
         <label for="inputState">CEDIS</label>
-        <input list="browsers" id="cliente" class="form-control" placeholder="Nombre del Cliente" name="cedis">
-        <datalist id="browsers">
-          <?php
-          $query = $link->query("SELECT * FROM `cedis`");
-          while ($valores = mysqli_fetch_array($query)) {
-            echo '<option >' . $valores['nom_cliente'];
-          }
-          ?>
-        </datalist>
+
+        <select id="cliente" class="form-control" name="cedis" >
+            <?php
+              $query = $link->query("SELECT * FROM `cedis`");
+              while ($valores = mysqli_fetch_array($query)) {
+                echo '<option value = "'.$valores['nom_cliente'].'">'.$valores['nom_cliente'];
+              }
+            ?>
+          </select>
       </div>
       <div class="form-group col-md-5">
         <label for="inputState">Destino</label>
-        <input list="browsers" id="cliente" class="form-control" placeholder="Nombre del Cliente" name="destino">
-        <datalist id="browsers">
-          <?php
-          $query = $link->query("SELECT * FROM `destinos`");
-          while ($valores = mysqli_fetch_array($query)) {
-            echo '<option >' . $valores['nom_cliente'];
-          }
-          ?>
-        </datalist>
+        <select id="cliente" class="form-control" name="destino" >
+            <?php
+              $query = $link->query("SELECT * FROM `destinos`");
+              while ($valores = mysqli_fetch_array($query)) {
+                echo '<option value = "'.$valores['nom_cliente'].'">'.$valores['nom_cliente'];
+              }
+            ?>
+          </select>
       </div>
 
       <div class="form-group col-md-2">

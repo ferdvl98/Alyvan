@@ -32,6 +32,15 @@
                 <th>Acciones</th>
             </tr>";
             break;
+        default: 
+        $consulta = $link->query("SELECT * FROM cliente");
+            echo "<table border = '1px' align ='center' id = 'tabla' class='display'>
+            <tr>
+                <th style='width: 10%'>Código</th>
+                <th style='width: 70%'>Cliente</th>
+                <th>Acciones</th>
+            </tr>";
+            break;
     }
 
     while ($registro = mysqli_fetch_array($consulta)) {

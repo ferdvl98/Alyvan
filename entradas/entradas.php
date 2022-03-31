@@ -153,15 +153,14 @@ require_once "../conexion/conexion.php";
       </div>
       <div class="form-group col-md-2">
         <label for="inputEmail4">Cliente</label>
-        <input list="browsers" name="cliente" id="cli" placeholder="Nombre del Cliente" class="form-control" name="cliente">
-        <datalist id="browsers">
-          <?php
-          $query = $link->query("SELECT * FROM `cliente`");
-          while ($valores = mysqli_fetch_array($query)) {
-            echo '<option >' . $valores['nom_cliente'];
-          }
-          ?>
-        </datalist>
+        <select id="cli" class="form-control" name="cliente" >
+            <?php
+              $query = $link->query("SELECT * FROM `cliente`");
+              while ($valores = mysqli_fetch_array($query)) {
+                echo '<option value = "'.$valores['nom_cliente'].'">'.$valores['nom_cliente'];
+              }
+            ?>
+          </select>
       </div>
       <div class="form-group col-md-3">
         <label for="inputZip">Obervaciones*</label>
