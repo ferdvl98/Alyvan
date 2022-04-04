@@ -9,7 +9,6 @@
             <th>Descripción</th>
             <th>Lote</th>
             <th style='font-size:90%;'>Cajas por Tarima</th>
-            
             <th>Piezas</th>
             <th>Cajas</th>
             <th>Tarimas</th>

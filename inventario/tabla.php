@@ -6,7 +6,7 @@
         case 0:
             //$consulta = $link->("SELECT ");
             $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
-                                    p.`precio` , p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente ;");
+                                    p.`precio` , p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente  WHERE p.cajas > 0 AND p.piezas > 0;");
 
             echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
                 <tr>
@@ -17,6 +17,7 @@
                     
                     <th>Piezas</th>
                     <th>Cajas</th>
+                    
                     <th>Tarimas</th>
                     <th>Posición</th>
                     <th>Cliente</th>
@@ -92,7 +93,6 @@
             <th>Descripción</th>
             <th>Lote</th>
             <th style='font-size:90%;'>Cajas por Tarima</th>
-            
             <th>Piezas</th>
             <th>Cajas</th>
             <th>Cajas Dañadas</th>
@@ -149,11 +149,11 @@
     <td>".$registro['cod_barras']."</td> 
     <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
     <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
-    <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
+    <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contented     itable>".number_format($registro['cajas'],2)."</td>
         
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
     <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($piezas2,3)."</td>
-    <td id ='piezas' data-id_piezas = '".$registro['id_producto']."'>".number_format($cajasd,2)."</td>
+    <td id ='cajas_da' data-cajas_da = '".$registro['id_producto']."'contenteditable>".number_format($cajasd,2)."</td>
     <td id ='cajas2' data-id_cajas2 = '".$registro['id_producto']."'>".number_format($cajas2,2)."</td>
     <td id ='lugar' data-id_lugar = '".$registro['id_producto']."'contenteditable>".$registro['lugar']."</td>
     <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
