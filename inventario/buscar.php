@@ -5,6 +5,7 @@
     $nombre = $_POST["id"];
     $clie = $_POST["cli"];
     $oder = $_POST["ord"];
+    $totalcajas = $totaltarimas = 0;
    //echo $clie."-".$oder;
     switch($id5){
         case 0:
@@ -116,7 +117,7 @@
                     }
                 }
             }
-            echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
+            echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla2' class='display'>
 
             <tr>    
                 <th style='font-size:90%;'>Código de Barras</th>
@@ -131,22 +132,7 @@
                 <th style='font-size:90%;'>Precio Unitario</th>
                 <th>ACCIONES</th>
             </tr>
-            <tfoot>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>  
-            <th></th>
-            <th>Total:</th>
-            <th>Total:</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-      
-        </tr>
-    </tfoot>
+
         ";
         //$cont = 1;
         while ($registro = mysqli_fetch_array($consulta)) {
@@ -188,13 +174,15 @@
             $piezas2 = $total_p/$piezast;
             $cajas2 = $piezas2/$cajas3;
             $total_p2 = $total_p- ($cajasd*$piezast);
+            $totalcajas += $piezas2;
+            $totaltarimas += $cajas2;
 
-        echo "
-        <tbody>
-        <tr>
-        <td>".$registro['cod_barras']."</td> 
-        <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
-        <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
+            echo "
+            <tbody>
+            <tr>
+            <td>".$registro['cod_barras']."</td> 
+            <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
+            <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
             <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
             
             <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
@@ -209,20 +197,11 @@
             </tbody>";
         //$cont++;
         }
+       
         break;
 
 
-        if($clie>0){
-            ?>
-      <div class="as">
-        <p>
-          <b>Total: </b>
-          <b name="total"> <?php echo "$ " ?></b>
-        </p>
-
-      </div>
-      <?php
-        }
+        
     case 1:
         if(empty(trim($nombre))){
             if($clie>0){
@@ -410,6 +389,19 @@
     }
 
         break;
+    }
+    if($clie>0){
+        ?>
+        <div class="as">
+            
+            <b>Cajas: </b>
+            <b name="total"> <?php echo number_format($totalcajas, 2); ?></b>
+            <b>Tarimas: </b>
+            <b name="total"> <?php echo number_format($totaltarimas, 3 ); ?></b>
+            
+
+        </div>
+        <?php
     }
 
 ?>
