@@ -5,7 +5,7 @@
     switch ($id) {
         case 0:
             //$consulta = $link->("SELECT ");
-            $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
+            $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.fecha_cad, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
                                     p.`precio` , p.lugar FROM `producto` as p INNER JOIN cliente as c ON c.id_cliente = p.id_cliente  WHERE p.cajas > 0 AND p.piezas > 0;");
 
             echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
@@ -13,6 +13,7 @@
                     <th style='font-size:90%;'>Código de Barras</th>
                     <th>Descripción</th>
                     <th>Lote</th>
+                    <th>Fecha de caducidad</th>
                     <th style='font-size:90%;'>Cajas por Tarima</th>
                     
                     <th>Piezas</th>
@@ -21,7 +22,6 @@
                     <th>Tarimas</th>
                     <th>Posición</th>
                     <th>Cliente</th>
-                    <th>Fecha de caducidad</th>
                     <th style='font-size:90%;'>Precio Unitario</th>
                     <th>ACCIONES</th>
                 </tr>
@@ -72,6 +72,7 @@
             <td>".$registro['cod_barras']."</td> 
             <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
             <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
+            <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['fecha_cad']."</td>
             <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
             
             <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>

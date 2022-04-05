@@ -8,7 +8,9 @@
             <th style='font-size:90%;'>Código de Barras</th>
             <th>Descripción</th>
             <th>Lote</th>
+            <th>Fecha de caducidad</th>
             <th style='font-size:90%;'>Cajas por Tarima</th>
+            
             <th>Piezas</th>
             <th>Cajas</th>
             <th>Tarimas</th>

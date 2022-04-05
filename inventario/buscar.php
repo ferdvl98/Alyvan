@@ -117,12 +117,12 @@
                 }
             }
             echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
-            <tr>
+            <tbody>
+            <tr>    
                 <th style='font-size:90%;'>Código de Barras</th>
                 <th>Descripción</th>
                 <th>Lote</th>
                 <th style='font-size:90%;'>Cajas por Tarima</th>
-                
                 <th>Piezas</th>
                 <th>Cajas</th>
                 <th>Tarimas</th>
@@ -131,6 +131,23 @@
                 <th style='font-size:90%;'>Precio Unitario</th>
                 <th>ACCIONES</th>
             </tr>
+            </  tbody>
+            <tfoot>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>  
+            <th></th>
+            <th>Total:</th>
+            <th>Total:</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+      
+        </tr>
+    </tfoot>
         ";
         //$cont = 1;
         while ($registro = mysqli_fetch_array($consulta)) {
