@@ -117,7 +117,7 @@
                 }
             }
             echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
-            <tbody>
+
             <tr>    
                 <th style='font-size:90%;'>Código de Barras</th>
                 <th>Descripción</th>
@@ -131,7 +131,6 @@
                 <th style='font-size:90%;'>Precio Unitario</th>
                 <th>ACCIONES</th>
             </tr>
-            </  tbody>
             <tfoot>
         <tr>
             <th></th>
@@ -191,6 +190,7 @@
             $total_p2 = $total_p- ($cajasd*$piezast);
 
         echo "
+        <tbody>
         <tr>
         <td>".$registro['cod_barras']."</td> 
         <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
@@ -205,7 +205,8 @@
             <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
             <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
             <button id ='delete' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'></button></td>
-            </tr>";
+            </tr>
+            </tbody>";
         //$cont++;
         }
         break;

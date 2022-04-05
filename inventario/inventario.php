@@ -91,7 +91,24 @@
             })
         }
 
-        
+      function contar(){
+         //Defino los totales de mis 2 columnas en 0
+         var total_col1 = 0;
+            var total_col2 = 0;
+            //Recorro todos los tr ubicados en el tbody
+            $('#tabla tbody').find('tr').each(function (i, el) {
+                      alert(total_col1);
+                  //Voy incrementando las variables segun la fila ( .eq(0) representa la fila 1 )     
+                  total_col1 = $(this).find('td').eq(0).text();
+                  total_col2 += parseFloat($(this).find('td').eq(6).text());
+                          
+              });
+              //Muestro el resultado en el th correspondiente a la columna
+              $('#tabla tfoot tr th').eq(0).text("Total " + total_col1);
+              $('#tabla tfoot tr th').eq(1).text("Total " + total_col2);
+         
+      }
+
 
         $("#clientes").change(function(){
           
@@ -108,22 +125,10 @@
               }
             })
             totalv(cli, id5);
+            contar();
             
 
-            //Defino los totales de mis 2 columnas en 0
-            var total_col1 = 0;
-            var total_col2 = 0;
-            //Recorro todos los tr ubicados en el tbody
-            $('#tabla tbody').find('tr').each(function (i, el) {
-                      alert(total_col1);
-                  //Voy incrementando las variables segun la fila ( .eq(0) representa la fila 1 )     
-                  total_col1 = $(this).find('td').eq(0).text();
-                  total_col2 += parseFloat($(this).find('td').eq(6).text());
-                          
-              });
-              //Muestro el resultado en el th correspondiente a la columna
-              $('#tabla tfoot tr th').eq(0).text("Total " + total_col1);
-              $('#tabla tfoot tr th').eq(1).text("Total " + total_col2);
+           
              
 
 	      });

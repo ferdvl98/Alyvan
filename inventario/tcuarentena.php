@@ -1,7 +1,7 @@
 <?php
     
     require_once "../conexion/conexion.php";
-    $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`, p.`lote`, p.`cajas`, p.`piezas`, p.`fecha_cad`, c.`nom_cliente`, p.`precio`, p.lugar FROM `producto` AS p INNER JOIN cliente AS c ON c.id_cliente = p.id_cliente INNER JOIN entrada as e ON e.id_producto = p.id_producto WHERE e.cajas_d > 0;");
+    $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`, p.`lote`, p.`fecha_cad`, p.`piezas`, p.`cajas`, c.`nom_cliente`, p.`precio`, p.lugar FROM `producto` AS p INNER JOIN cliente AS c ON c.id_cliente = p.id_cliente INNER JOIN entrada as e ON e.id_producto = p.id_producto WHERE e.cajas_d > 0;");
 
     echo "<table border = '1px'style ='width:1100px'  align ='center' id = 'tabla' class='display'>
         <tr>
