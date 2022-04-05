@@ -192,6 +192,19 @@
         //$cont++;
         }
         break;
+
+
+        if($clie>0){
+            ?>
+      <div class="as">
+        <p>
+          <b>Total: </b>
+          <b name="total"> <?php echo "$ " ?></b>
+        </p>
+
+      </div>
+      <?php
+        }
     case 1:
         if(empty(trim($nombre))){
             if($clie>0){
@@ -243,6 +256,7 @@
             }
         }else{
             if($clie>0){
+
                 switch ($oder) {
                     case 0:
                         $consulta = $link->query("SELECT p.`id_producto`, p.`cod_barras`, p.`descripcion`,  p.`lote`, p.`cajas`,p.`piezas`, p.`fecha_cad`, c.`nom_cliente`,
