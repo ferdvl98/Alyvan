@@ -21,6 +21,7 @@
                     <th>Tarimas</th>
                     <th>Posición</th>
                     <th>Cliente</th>
+                    <th>Fecha de caducidad</th>
                     <th style='font-size:90%;'>Precio Unitario</th>
                     <th>ACCIONES</th>
                 </tr>
@@ -81,6 +82,7 @@
             <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
             <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
             <button id ='delete' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'></button></td>
+
             </tr>";
             } 
         break;
@@ -99,6 +101,7 @@
             <th>Tarimas</th>
             <th>Posición</th>
             <th>Cliente</th>
+            <th>Fecha de caducidad</th>
             <th style='font-size:90%;'>Precio Unitario</th>
             <th>ACCIONES</th>
         </tr>
