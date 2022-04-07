@@ -51,7 +51,7 @@ $styleArray = [
 $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
 $drawing->setName('Paid');
 $drawing->setDescription('Paid');
-$drawing->setPath('../img/logo2.png'); // put your path and image here
+$drawing->setPath('../img/logo2.png');
 $drawing->setCoordinates('F1');
 $drawing->setWidthAndHeight(300, 350);
 $drawing->setOffsetX(10);

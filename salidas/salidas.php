@@ -79,7 +79,7 @@ require_once "../conexion/conexion.php";
           }
         });
         $.ajax({
-          url: "getlote.php",
+          url: "get-lote.php",
           method: "POST",
           dataType: 'html',
           data: {
