@@ -138,6 +138,23 @@
           obtener_datos2(id, id2);
         });
 
+      /*  $(document).on("click", "#down", function(){
+          var id =$(this).data("id");
+          $.ajax({
+            url: "../excel/prueba.php",
+            method: "POST",
+            data: {id: id},
+            success: function(data){
+              //alert(data);
+            }
+          });
+          
+        });*/
+        $(document).on("click", "#down", function(){
+          var a = $(this).data("id");
+          location.href='../excel/prueba.php?id=' + a;
+        });
+
         function actualizar_datos(id, texto, a){
           //var id2 = document.getElementById('selec').value;
           var id5 = document.getElementById('selec').value;
