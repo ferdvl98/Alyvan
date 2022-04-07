@@ -62,7 +62,7 @@ require_once "../conexion/conexion.php";
       const input = document.querySelector('input');
       const log = document.getElementById('cb');
       log.addEventListener('input', buscar);
-
+      var lote = $('#lote');
       function buscar(e) {
         var id = $("#cb").val();
         $.ajax({
@@ -77,7 +77,20 @@ require_once "../conexion/conexion.php";
             $('#des').val(a[0]);
             $('#cad').val(a[1]);
           }
+        });
+        $.ajax({
+          url: "getlote.php",
+          method: "POST",
+          dataType: 'html',
+          data: {
+            id: id
+          },
+          success: function(data) {
+            lote.html(data);  
+          }
         })
+
+        
       }
 
     });
@@ -110,8 +123,9 @@ require_once "../conexion/conexion.php";
     </div>
     <div class="form-row">
       <div class="form-group col-md-2">
-        <label for="inputZip">Lote</label>
-        <input type="text" class="form-control" id="lote" placeholder="Lote" name="lote">
+      <label for="inputState">Lote</label>
+        <select id="lote" class="form-control" name="lote" >
+          </select>
       </div>
       <div class="form-group col-md-2">
         <label for="inputZip">Orden de Pedido</label>
@@ -135,8 +149,7 @@ require_once "../conexion/conexion.php";
       </div>
       <div class="form-group col-md-5">
         <label for="inputState">CEDIS</label>
-
-        <select id="cliente" class="form-control" name="cedis" >
+        <select id="cedis" class="form-control" name="cedis" >
             <?php
               $query = $link->query("SELECT * FROM `cedis`");
               while ($valores = mysqli_fetch_array($query)) {
@@ -147,7 +160,7 @@ require_once "../conexion/conexion.php";
       </div>
       <div class="form-group col-md-5">
         <label for="inputState">Destino</label>
-        <select id="cliente" class="form-control" name="destino" >
+        <select id="destino" class="form-control" name="destino" >
             <?php
               $query = $link->query("SELECT * FROM `destinos`");
               while ($valores = mysqli_fetch_array($query)) {

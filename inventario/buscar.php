@@ -393,13 +393,10 @@
     if($clie>0){
         ?>
         <div class="as">
-            
             <b>Cajas: </b>
             <b name="total"> <?php echo number_format($totalcajas, 2); ?></b>
             <b>Tarimas: </b>
             <b name="total"> <?php echo number_format($totaltarimas, 3 ); ?></b>
-            
-
         </div>
         <?php
     }
