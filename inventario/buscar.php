@@ -130,7 +130,7 @@
                 <th>Posición</th>
                 <th>Cliente</th>
                 <th style='font-size:90%;'>Precio Unitario</th>
-                <th>ACCIONES</th>
+                <th style='width:115px;'>ACCIONES</th>
             </tr>
 
         ";
@@ -192,7 +192,7 @@
             <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
             <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
             <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
-            <button id ='delete' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'></button></td>
+            <button id ='delete' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'></button><button id ='down' data-id= '".$registro['id_producto']."' class='fas fa-file-download' style='color: #116cb6; border: none; pading: none'></button></td>
             </tr>
             </tbody>";
         //$cont++;
@@ -325,7 +325,7 @@
             <th>Posición</th>
             <th>Cliente</th>
             <th style='font-size:90%;'>Precio Unitario</th>
-            <th>ACCIONES</th>
+            <th style='width:115px;'>ACCIONES</th>
         </tr>
     ";
     //$cont = 1;
@@ -383,7 +383,8 @@
         <td id ='cliente' data-id_cliente = '".$registro['id_producto']."'>".$registro['nom_cliente']."</td>
         <td id ='precio' data-id_precio = '".$registro['id_producto']."'contenteditable>".number_format($registro['precio'],2)."</td>
         <td><button id ='ver' data-id= '".$registro['id_producto']."' class='fas fa-eye' style='color: #116cb6; border: none; pading: none' data-bs-toggle='modal' data-bs-target='#exampleModal'></button>
-        <button id ='delet2' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'data-bs-toggle='modal' data-bs-target='#exampleModal2'></button></td>
+        <button id ='delet2' data-id= '".$registro['id_producto']."' class='fas fa-trash-alt' style='color: #116cb6; border: none; pading: none'data-bs-toggle='modal' data-bs-target='#exampleModal2'></button>
+        <button id ='down' data-id= '".$registro['id_producto']."' class='fas fa-file-download' style='color: #116cb6; border: none; pading: none'></button></td>
         </tr>";
     //$cont++;
     }
