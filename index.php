@@ -21,6 +21,11 @@
     <title>Alyvan</title>
     <link rel="shortcut icon" href="img/logo-inventarios.png" />
     <link rel="stylesheet" href="css/estilos-log.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
     <script src="../js/botones.js"></script>
 </head>
@@ -52,7 +57,14 @@
                     <input type="text" placeholder="Nombre Completo" name ="nombre">
                     <input type="text" placeholder="Nombre de Usuario" name = "user">
                     <input type="password" placeholder="Contraseña" name = "pass">
+                    <br>
+                    <select name="tipo" id="tipo" class="form-select" aria-label="Default select example">
+                        <option value=0>Tipo de Usuario</option>
+                        <option value=1>Logistica</option>
+                        <option value=2>Comercializadora</option>
+                    </select>
                     <button>Registrarse</button>
+                    
                 </form>
             </div>
         </div>

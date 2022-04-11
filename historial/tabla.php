@@ -52,6 +52,7 @@
             while ($reg = mysqli_fetch_array($sql)) {
                 $cliente = $reg['nom_cliente'];
             }
+
             $accion = "Salierón <b>".number_format($tarimas,2)."</b> tarimas, <b>".number_format($cajas,2)." </b> cajas, <b>".number_format($piezas,2)."</b> piezas
             de  <b>".$cliente."</b> hacía  <b>".$cedis." ".$destino."</b>";
         }

@@ -13,10 +13,17 @@
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             $id = $row["id_usuario"];
+            $tipo = $row["tipo"];
         }
+        
         $_SESSION['user2'] = $user;
-        header("location:code/main.php?id=$id");
+        if($tipo == 1){
+            header("location:code/main.php?id=$id");
+            exit;
+        }else{
+            header("location:punto/main.php?id=$id");
         exit;
+        }
     }else{
         ?>
             <script>
