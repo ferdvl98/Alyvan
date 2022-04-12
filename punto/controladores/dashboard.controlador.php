@@ -11,4 +11,16 @@
 
             return $ventasMesActual;
         }
+
+        static public function ctrProductosMasVendidos(){
+            $productosMasVendidos = DashboardModelo::mdlGetProductosMasVendidos();
+
+            return $productosMasVendidos;
+        }
+
+        static public function ctrProductosPocoSotck(){
+            $productosPocoStock = DashboardModelo::mdlGetProductosPocoStock();
+
+            return $productosPocoStock;
+        }
     }

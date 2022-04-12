@@ -140,6 +140,67 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Los 10 productos mas vendidos</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div> <!-- ./ end card-tools -->
+                    </div> <!-- ./ end card-header -->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" id="tbl_productos_mas_vendidos">
+                                <thead>
+                                    <tr>
+                                        <th>Cod. Producto</th>
+                                        <th>Producto</th>
+                                        <th>Cantidad</th>
+                                        <th>Ventas</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div> <!-- ./ end card-body -->
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Productos con Poco Stock</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div> <!-- ./ end card-tools -->
+                    </div> <!-- ./ end card-header -->
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table" id="tbl_productos_poco_stock">
+                                <thead>
+                                    <tr>
+                                        <th>Cod. Producto</th>
+                                        <th>Producto</th>
+                                        <th>Stock Actual</th>
+                                        <th>Min. Stock</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div> <!-- ./ end card-body -->
+                </div>
+            </div>
+        </div>
+
     </div><!-- /.container-fluid -->
 </div>
 <!-- /.content -->
@@ -209,7 +270,7 @@ $(document).ready(function() {
                 ]);
             }
 
-            $('.card-title').html("Ventas del mes: " + parseFloat(total_venta_mes).toString()
+            $('#totalVM').html("Ventas del mes: " + parseFloat(total_venta_mes).toString()
                 .replace(/\d(?=(\d{3})+\.)/g, "$&,"));
 
             var barChartCamvas = $('#barChart').get(0).getContext('2d');
@@ -277,6 +338,51 @@ $(document).ready(function() {
                 data: barChartData,
                 options: barChartOptions
             })
+        }
+    });
+
+    $.ajax({
+        url: "ajax/dashboard.ajax.php",
+        type: "POST",
+        data: {
+            'accion': 2
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            console.log("respunesta", respuesta);
+            for (let i = 0; i < respuesta.length; i++) {
+                filas = '<tr>' +
+                    '<td>' + respuesta[i]["codigo_producto"] + '</td>' +
+                    '<td>' + respuesta[i]["descripcion_producto"] + '</td>' +
+                    '<td>' + respuesta[i]["cantidad"] + '</td>' +
+                    '<td>' +'$'+ respuesta[i]["total_venta"].toString()
+                .replace(/\d(?=(\d{3})+\.)/g, "$&,") + '</td>' +
+                    '</tr>'
+                $('#tbl_productos_mas_vendidos').append(filas);
+            }
+
+        }
+    });
+
+    $.ajax({
+        url: "ajax/dashboard.ajax.php",
+        type: "POST",
+        data: {
+            'accion': 3
+        },
+        dataType: 'json',
+        success: function(respuesta) {
+            console.log("respunesta", respuesta);
+            for (let i = 0; i < respuesta.length; i++) {
+                filas = '<tr>' +
+                    '<td>' + respuesta[i]["codigo_producto"] + '</td>' +
+                    '<td>' + respuesta[i]["descripcion_producto"] + '</td>' +
+                    '<td>' + respuesta[i]["stock_producto"] + '</td>' +
+                    '<td>' + respuesta[i]["minimo_stock_producto"] +
+                    '</tr>'
+                $('#tbl_productos_poco_stock').append(filas);
+            }
+
         }
     });
 })
