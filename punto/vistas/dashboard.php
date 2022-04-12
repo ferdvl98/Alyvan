@@ -26,7 +26,7 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h4 id="totalProductos"></h4>
-                        <p>Productos Registrados</p>
+                        <p>Total Productos</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-clipboard"></i>
@@ -349,7 +349,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(respuesta) {
-            console.log("respunesta", respuesta);
+            //console.log("respunesta", respuesta);
             for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
                     '<td>' + respuesta[i]["codigo_producto"] + '</td>' +
@@ -372,7 +372,7 @@ $(document).ready(function() {
         },
         dataType: 'json',
         success: function(respuesta) {
-            console.log("respunesta", respuesta);
+            //console.log("respunesta", respuesta);
             for (let i = 0; i < respuesta.length; i++) {
                 filas = '<tr>' +
                     '<td>' + respuesta[i]["codigo_producto"] + '</td>' +

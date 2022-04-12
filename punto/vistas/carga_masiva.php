@@ -97,28 +97,41 @@ $(document).ready(function() {
             $("#img_cargar").attr("style", "width:200px");
 
             $.ajax({
-                url: "ajax/productos.ajax.php",
-                type: "POST",
-                data: datos,
-                cache: false,
-                contentType: false,
-                processData: false,
-                successs: function(respuesta) {
-                    console.log("respuesta2", respuesta);
+                    url:"ajax/productos.ajax.php",
+                    type: "POST",
+                    data: datos,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success:function(respuesta){
 
-                    if (respuesta > 0) {
+                        // console.log("respuesta",respuesta);
+
+                        if(respuesta['totalCategorias'] > 0 && respuesta['totalProductos'] > 0 ){
+                        console.log("Siebtrei");
                         Swal.fire({
-                            position: "center",
-                            icon: "warning",
-                            title: "Se registraron " + respuesta +
-                                " categorias correctamente",
-                            showConfirmButton: false,
-                            timer: 2500
-                        })
+                                position:'center',
+                                icon:'success',
+                                title: 'Se registraron ' + respuesta['totalCategorias']+ ' categorias y '+respuesta['totalProductos']+' productos correctamente!',
+                                showConfirmButton: false,
+                                timer: 2500
+                            })
 
-                        $("#btn_cargar").prop("disabled", false);
+                            $("#btn_cargar").prop("disabled",false);
+                            $("#img_cargar").attr("style","display:none");
+                    }else{
+                        Swal.fire({
+                                position:'center',
+                                icon:'error',
+                                title: 'Se presento un error al momento de realizar el registro de categorías y/o productos!',
+                                showConfirmButton: false,
+                                timer: 2500
+                            })
 
-                        $("#img_cargar").attr("style", "display:none");
+                            $("#btn_cargar").prop("disabled",false);
+                            $("#img_cargar").attr("style","display:none");
+
                     }
                 }
 
