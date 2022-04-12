@@ -109,7 +109,6 @@ $(document).ready(function() {
                         // console.log("respuesta",respuesta);
 
                         if(respuesta['totalCategorias'] > 0 && respuesta['totalProductos'] > 0 ){
-                        console.log("Siebtrei");
                         Swal.fire({
                                 position:'center',
                                 icon:'success',
