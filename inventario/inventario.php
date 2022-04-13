@@ -192,6 +192,13 @@
           var a = 2;
           actualizar_datos(id, puesto, a);
         });
+        $(document).on("blur", "#fecha_cad", function(){
+          var id = $(this).data("fecha_cad");
+          var puesto = $(this).text();
+          //alert(puesto);
+          var a = 6;
+          actualizar_datos(id, puesto, a);
+        });
 
         $(document).on("blur", "#des", function(){
           var id = $(this).data("id_des");

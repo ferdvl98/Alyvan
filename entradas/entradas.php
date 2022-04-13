@@ -40,8 +40,6 @@ require_once "../conexion/conexion.php";
         x.disabled = z;
         x = document.getElementById('pre');
         x.disabled = z;
-        x = document.getElementById('cad');
-        x.disabled = z;
         x = document.getElementById('cli');
         x.disabled = z;
         x = document.getElementById('crpt');

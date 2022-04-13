@@ -73,7 +73,7 @@
             <td>".$registro['cod_barras']."</td> 
             <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
             <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
-            <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['fecha_cad']."</td>
+            <td id ='fecha_cad' data-fecha_cad = '".$registro['id_producto']."'contenteditable>".$registro['fecha_cad']."</td>
             <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contenteditable>".number_format($registro['cajas'],2)."</td>
             
             <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>
@@ -156,7 +156,7 @@
     <td>".$registro['cod_barras']."</td> 
     <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'contenteditable>".$registro['descripcion']."</td>
     <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['lote']."</td>
-    <td id ='nombre' data-id_nombre = '".$registro['id_producto']."'>".$registro['fecha_cad']."</td>
+    <td id ='fecha_cad' data-fecha_cad = '".$registro['id_producto']."'contenteditable>".$registro['fecha_cad']."</td>
     <td id ='cajas' data-id_cajas = '".$registro['id_producto']."'contented     itable>".number_format($registro['cajas'],2)."</td>
         
     <td id ='total' data-id_total = '".$registro['id_producto']."'>".number_format($total_p2,0)."</td>

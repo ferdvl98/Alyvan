@@ -106,5 +106,11 @@
 
             return $stmt->fetch();
         }
+        static public function mdlListarProductos(){
+            $stmt = Conexion::conectar()->prepare('call prc_listarProductos');
+            $stmt -> execute();
+
+            return $stmt->fetchAll();
+        }
 
     }

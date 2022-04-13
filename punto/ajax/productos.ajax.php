@@ -12,10 +12,15 @@
             $respuesta = ProductoControlador::ctrCargaMasivaProdcuto($this->fileProductos);
             echo json_encode($respuesta);
         }
+        public function ajaxListarProductos(){
+            $productos = ProductoControlador::ctrajaxListarProductos();
+            echo json_encode($productos);
+        }
     }
-
-
-    if(isset($_FILES)){
+    if(isset($_POST['accion']) && $_POST['accion'] == 1){
+        $productos = new ajaxProductos();
+        $productos -> ajaxListarProductos();
+    }else if(isset($_FILES)){
         $archivo_productos = new ajaxProductos();
         $archivo_productos -> fileProductos =$_FILES['fileProductos'];
         $archivo_productos -> ajaxCargaMasivaProducto();

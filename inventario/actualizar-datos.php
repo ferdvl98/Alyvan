@@ -81,6 +81,14 @@
                 exit();
             }
             break;
+        case 6:
+            if($consulta = $link->query("UPDATE producto SET fecha_cad = '$texto' WHERE id_producto = $id")){
+                echo "Dato actualizado";
+            }else{
+                echo "Error al actualizar los datos ";
+                exit();
+            }
+            break;
     }
 
 
